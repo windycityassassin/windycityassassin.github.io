@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arjun Prithvi · Forward Deployed / Applied AI</title>
+<meta name="description" content="Portfolio of Arjun Prithvi. Applied AI, agentic systems, ML, geographic visualization, and the occasional 3D simulator.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --bg-card: #141414;
+    --bg-card-hover: #1a1a1a;
+    --border: #1f1f1f;
+    --border-hover: #2a2a2a;
+    --text: #e8e8e8;
+    --text-dim: #888;
+    --text-faint: #555;
+    --accent: #0DFF82;
+    --accent-warm: #FF2947;
+    --tag-bg: #1a1a1a;
+    --tag-text: #aaa;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 80px 24px 120px;
+  }
+  header {
+    margin-bottom: 80px;
+  }
+  .name {
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: -1.5px;
+    margin-bottom: 8px;
+  }
+  .name .accent { color: var(--accent); }
+  .tagline {
+    font-size: 20px;
+    color: var(--text-dim);
+    font-weight: 400;
+    margin-bottom: 32px;
+    max-width: 640px;
+  }
+  .contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+  }
+  .contact a {
+    color: var(--text);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 2px;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .contact a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+  .section-title {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin-bottom: 24px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .about {
+    font-size: 17px;
+    color: var(--text-dim);
+    max-width: 720px;
+    margin-bottom: 80px;
+  }
+  .about p + p { margin-top: 16px; }
+  .about strong { color: var(--text); font-weight: 500; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    transition: background 0.15s, border-color 0.15s, transform 0.15s;
+    position: relative;
+  }
+  .card:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--border-hover);
+    transform: translateY(-2px);
+  }
+  .card.featured {
+    border-color: rgba(13, 255, 130, 0.2);
+  }
+  .card.featured::before {
+    content: 'LIVE';
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: var(--accent);
+    color: #000;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 4px 8px;
+    border-radius: 3px;
+  }
+  .card.archived { opacity: 0.7; }
+  .card.archived::before {
+    content: 'ARCHIVED';
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: var(--bg);
+    color: var(--text-faint);
+    border: 1px solid var(--border-hover);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 4px 8px;
+    border-radius: 3px;
+  }
+  .card-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .card-tagline {
+    font-size: 14px;
+    color: var(--text-dim);
+    margin-bottom: 16px;
+    line-height: 1.5;
+  }
+  .card-desc {
+    font-size: 15px;
+    color: var(--text);
+    margin-bottom: 20px;
+    line-height: 1.6;
+    flex-grow: 1;
+  }
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 20px;
+  }
+  .tag {
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    padding: 3px 8px;
+    border-radius: 3px;
+    border: 1px solid var(--border);
+  }
+  .links {
+    display: flex;
+    gap: 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+  }
+  .links a {
+    color: var(--text-dim);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 2px;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .links a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+  .links a.demo {
+    color: var(--accent);
+    border-bottom-color: rgba(13, 255, 130, 0.3);
+  }
+  .links a.demo:hover {
+    border-bottom-color: var(--accent);
+  }
+  footer {
+    margin-top: 120px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--text-faint);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  footer a {
+    color: var(--text-faint);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  footer a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+  @media (max-width: 720px) {
+    .wrap { padding: 48px 20px 80px; }
+    .name { font-size: 36px; }
+    .tagline { font-size: 17px; }
+    .grid { grid-template-columns: 1fr; }
+    header { margin-bottom: 56px; }
+    .about { margin-bottom: 56px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1 class="name">Arjun Prithvi<span class="accent">.</span></h1>
+  <p class="tagline">Forward Deployed Engineer, Applied AI, Solutions. I ship working systems and write the README before the abstraction.</p>
+  <div class="contact">
+    <a href="mailto:arjunprithvi@gmail.com">arjunprithvi@gmail.com</a>
+    <a href="https://github.com/windycityassassin" target="_blank" rel="noopener">github.com/windycityassassin</a>
+  </div>
+</header>
+
+<section class="about-section">
+  <div class="section-title">About</div>
+  <div class="about">
+    <p>I build things end-to-end. Multi-agent systems with <strong>CrewAI</strong> and <strong>Claude</strong>, ML reproductions of published physics papers, geographic visualizations that load 1,000+ markers without choking, and the occasional 3D Rubik's cube simulator because the rotation math was bothering me.</p>
+    <p>Currently looking for <strong>Forward Deployed Engineer</strong>, <strong>Applied AI Engineer</strong>, and <strong>Solutions Engineer</strong> roles where the job is to sit close to a customer and ship.</p>
+  </div>
+</section>
+
+<section>
+  <div class="section-title">Projects</div>
+  <div class="grid">
+
+    <div class="card featured">
+      <div class="card-title">collegelinks</div>
+      <div class="card-tagline">Interactive map of 1,186 colleges across India.</div>
+      <div class="card-desc">Folium-generated Leaflet map with state and institution-type filters, instant search, and clustered markers for performance. Pure static HTML, no backend. The geographic layer the existing edtech portals never built.</div>
+      <div class="tags">
+        <span class="tag">Python</span>
+        <span class="tag">Folium</span>
+        <span class="tag">Leaflet</span>
+        <span class="tag">GeoData</span>
+      </div>
+      <div class="links">
+        <a class="demo" href="https://windycityassassin.github.io/collegelinks/" target="_blank" rel="noopener">live demo →</a>
+        <a href="https://github.com/windycityassassin/collegelinks" target="_blank" rel="noopener">code →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">autotestai</div>
+      <div class="card-tagline">AI test platform that replaces a QA team.</div>
+      <div class="card-desc">Generates Playwright tests from one-line prompts, self-heals when selectors break, monitors autonomously via KAIROS, and remembers verified selectors across runs. Stripe billing, project memory in Postgres, multi-model assertion consensus.</div>
+      <div class="tags">
+        <span class="tag">React</span>
+        <span class="tag">Express</span>
+        <span class="tag">Postgres</span>
+        <span class="tag">Anthropic</span>
+        <span class="tag">Stripe</span>
+      </div>
+      <div class="links">
+        <a href="https://github.com/windycityassassin/autotestai" target="_blank" rel="noopener">code →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">sainma</div>
+      <div class="card-tagline">Movie answer engine: type a scene, get the clip.</div>
+      <div class="card-desc">Natural-language queries like "the lightsaber duel on the lava planet" return the actual video clip. Five-agent CrewAI crew (Chief, Movie Expert, Visual Analyst, Dialogue Expert, Clip Director) routes the query over multimodal FAISS embeddings fusing visual, audio, and text signals.</div>
+      <div class="tags">
+        <span class="tag">CrewAI</span>
+        <span class="tag">FAISS</span>
+        <span class="tag">Multimodal</span>
+        <span class="tag">Video</span>
+      </div>
+      <div class="links">
+        <a href="https://github.com/windycityassassin/sainma" target="_blank" rel="noopener">code →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">AIPodcast</div>
+      <div class="card-tagline">Multi-agent podcast generator with local TTS.</div>
+      <div class="card-desc">CrewAI agents draft the script (host, researcher, expert), Kokoro-82M renders speech locally with multiple voices, audio pipeline mixes in background music and sound effects, Gradio UI ties it together. End-to-end without OpenAI TTS bills.</div>
+      <div class="tags">
+        <span class="tag">CrewAI</span>
+        <span class="tag">Kokoro-82M</span>
+        <span class="tag">Gradio</span>
+        <span class="tag">Audio</span>
+      </div>
+      <div class="links">
+        <a href="https://github.com/windycityassassin/AIPodcast" target="_blank" rel="noopener">code →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">research</div>
+      <div class="card-tagline">Physics-informed neural net for arterial wall stress.</div>
+      <div class="card-desc">Reproduces Holzapfel et al., Acta Biomaterialia 2022. Constitutive Artificial Neural Net (CANN) predicts strain-energy density from 14 microstructural features, recovers stress tensor by autodiff. R² = 0.9206 against paper-digitized data, inside the paper's reported 0.9-0.98 range.</div>
+      <div class="tags">
+        <span class="tag">PyTorch</span>
+        <span class="tag">Streamlit</span>
+        <span class="tag">Biomechanics</span>
+        <span class="tag">Physics-Informed</span>
+      </div>
+      <div class="links">
+        <a href="https://github.com/windycityassassin/research" target="_blank" rel="noopener">code →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">reality</div>
+      <div class="card-tagline">MMA gym map of India + scout app prototype.</div>
+      <div class="card-desc">Two pieces. Python scripts geocode and visualize India's MMA gym network. React + TypeScript + Mapbox prototype prototypes a scouting platform with fighter database, show manager, and analytics for a planned reality-show production.</div>
+      <div class="tags">
+        <span class="tag">Python</span>
+        <span class="tag">React</span>
+        <span class="tag">Mapbox</span>
+        <span class="tag">MUI</span>
+      </div>
+      <div class="links">
+        <a href="https://github.com/windycityassassin/reality" target="_blank" rel="noopener">code →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">reactor</div>
+      <div class="card-tagline">Auto-generate reaction videos with computer vision.</div>
+      <div class="card-desc">Six-stage pipeline. Extract frames with OpenCV, detect objects with DETR ResNet-50, prompt GPT-2 to generate commentary, synthesize speech with gTTS, recombine into a final reaction video via MoviePy. All local, no API calls.</div>
+      <div class="tags">
+        <span class="tag">PyTorch</span>
+        <span class="tag">DETR</span>
+        <span class="tag">OpenCV</span>
+        <span class="tag">MoviePy</span>
+      </div>
+      <div class="links">
+        <a href="https://github.com/windycityassassin/reactor" target="_blank" rel="noopener">code →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">rubikscubetutorial</div>
+      <div class="card-tagline">3D Rubik's cube simulator from scratch.</div>
+      <div class="card-desc">27 cubies rendered through the PyOpenGL fixed-function pipeline. Six face rotations via hand-written 2D rotation matrices and per-face sticker permutation tables. Mouse-drag camera orbit, 20-move random scramble. Built to actually understand 3D rotation math.</div>
+      <div class="tags">
+        <span class="tag">Python</span>
+        <span class="tag">PyOpenGL</span>
+        <span class="tag">Pygame</span>
+        <span class="tag">3D Math</span>
+      </div>
+      <div class="links">
+        <a href="https://github.com/windycityassassin/rubikscubetutorial" target="_blank" rel="noopener">code →</a>
+      </div>
+    </div>
+
+    <div class="card archived">
+      <div class="card-title">LinkedInNewsBot</div>
+      <div class="card-tagline">Tech news scraper with auto-poster. Not running.</div>
+      <div class="card-desc">Scrapes TechCrunch, ZDNet, NetworkWorld for enterprise IT articles, deduplicates by URL in SQLite, posts via Selenium-driven Brave to LinkedIn. Archived because LinkedIn ToS plus the value-to-maintenance ratio doesn't work. Kept as an architecture reference.</div>
+      <div class="tags">
+        <span class="tag">Python</span>
+        <span class="tag">Selenium</span>
+        <span class="tag">SQLite</span>
+        <span class="tag">BeautifulSoup</span>
+      </div>
+      <div class="links">
+        <a href="https://github.com/windycityassassin/LinkedInNewsBot" target="_blank" rel="noopener">code →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div>9 projects · 1 live demo · <a href="https://github.com/windycityassassin?tab=repositories" target="_blank" rel="noopener">all repositories →</a></div>
+  <div>Built static. Served by GitHub Pages.</div>
+</footer>
+
+</div>
+</body>
+</html>
