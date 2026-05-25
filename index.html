@@ -442,23 +442,24 @@
       </div>
     </div>
 
-    <div class="card">
+    <div class="card featured">
       <div class="card-title">clipfarm</div>
-      <div class="card-tagline">Live-stream highlight clipper for Twitch + Kick.</div>
-      <div class="card-desc">Pulls a live Twitch or Kick stream via streamlink, captures into rolling MPEG-TS segments, scores windows on audio loudness (RMS dBFS, z-scored) plus chat velocity (anonymous Twitch IRC or Kick Pusher WebSocket), runs non-max suppression over candidate peaks, and ffmpeg-cuts each highlight to a 9:16 vertical mp4 with a JSON sidecar of the score breakdown. Verified end-to-end against twitch.tv/lofigirl. Lives in the same repo as the original reactor reaction-voiceover pipeline, which moved to a subdirectory.</div>
+      <div class="card-tagline">Twitch livestream highlight clipper.</div>
+      <div class="card-desc">Pulls a live Twitch stream via streamlink, captures into rolling MPEG-TS segments, scores windows on audio loudness (RMS dBFS, z-scored) plus chat velocity (anonymous IRC), runs non-max suppression over candidate peaks, and ffmpeg-cuts each highlight to a 9:16 vertical mp4 with a JSON sidecar of the score breakdown. Verified end-to-end against twitch.tv/lofigirl. The live link is a project showcase — clipfarm itself is a CLI tool, not a browser app.</div>
       <div class="tags">
         <span class="tag">Python</span>
         <span class="tag">streamlink</span>
         <span class="tag">ffmpeg</span>
         <span class="tag">numpy</span>
-        <span class="tag">Pusher WS</span>
+        <span class="tag">Twitch IRC</span>
       </div>
       <div class="links">
-        <a href="https://github.com/windycityassassin/reactor/tree/main/clipping" target="_blank" rel="noopener">code →</a>
+        <a class="demo" href="https://windycityassassin.github.io/clipfarm/" target="_blank" rel="noopener">live demo →</a>
+        <a href="https://github.com/windycityassassin/clipfarm/tree/master/clipping" target="_blank" rel="noopener">code →</a>
       </div>
     </div>
 
-    <div class="card">
+    <div class="card featured">
       <div class="card-title">port-pilot-prosper</div>
       <div class="card-tagline">Interactive business plan for a virtual phone number arbitrage.</div>
       <div class="card-desc">Hero, concept clarification, business model breakdown, and a generated plan on a single React page. Pure frontend, no backend, no API keys. Built as a thought experiment around whether you can turn DID number arbitrage into an automated business.</div>
@@ -493,7 +494,7 @@
 </section>
 
 <footer>
-  <div>14 projects · 12 live demos · <a href="https://github.com/windycityassassin?tab=repositories" target="_blank" rel="noopener">all repositories →</a></div>
+  <div>14 projects · 13 live demos · <a href="https://github.com/windycityassassin?tab=repositories" target="_blank" rel="noopener">all repositories →</a></div>
   <div>Built static. Served by GitHub Pages.</div>
 </footer>
 
