@@ -443,17 +443,18 @@
     </div>
 
     <div class="card">
-      <div class="card-title">reactor</div>
-      <div class="card-tagline">Auto-generate reaction videos with computer vision.</div>
-      <div class="card-desc">Six-stage pipeline. Extract frames with OpenCV, detect objects with DETR ResNet-50, prompt GPT-2 to generate commentary, synthesize speech with gTTS, recombine into a final reaction video via MoviePy. All local, no API calls.</div>
+      <div class="card-title">clipfarm</div>
+      <div class="card-tagline">Live-stream highlight clipper for Twitch + Kick.</div>
+      <div class="card-desc">Pulls a live Twitch or Kick stream via streamlink, captures into rolling MPEG-TS segments, scores windows on audio loudness (RMS dBFS, z-scored) plus chat velocity (anonymous Twitch IRC or Kick Pusher WebSocket), runs non-max suppression over candidate peaks, and ffmpeg-cuts each highlight to a 9:16 vertical mp4 with a JSON sidecar of the score breakdown. Verified end-to-end against twitch.tv/lofigirl. Lives in the same repo as the original reactor reaction-voiceover pipeline, which moved to a subdirectory.</div>
       <div class="tags">
-        <span class="tag">PyTorch</span>
-        <span class="tag">DETR</span>
-        <span class="tag">OpenCV</span>
-        <span class="tag">MoviePy</span>
+        <span class="tag">Python</span>
+        <span class="tag">streamlink</span>
+        <span class="tag">ffmpeg</span>
+        <span class="tag">numpy</span>
+        <span class="tag">Pusher WS</span>
       </div>
       <div class="links">
-        <a href="https://github.com/windycityassassin/reactor" target="_blank" rel="noopener">code →</a>
+        <a href="https://github.com/windycityassassin/reactor/tree/main/clipping" target="_blank" rel="noopener">code →</a>
       </div>
     </div>
 
