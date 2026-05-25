@@ -325,16 +325,17 @@
 
     <div class="card featured">
       <div class="card-title">AIPodcast</div>
-      <div class="card-tagline">Multi-agent podcast generator with local TTS.</div>
-      <div class="card-desc">CrewAI agents draft the script (research, content, fact-check, show notes, audio enhancement), Kokoro-82M renders speech locally across eleven voices, audio pipeline mixes in background music and sound effects, Gradio UI ties it together. The live demo runs the TTS layer in the browser; the full agent pipeline lives in the repo.</div>
+      <div class="card-tagline">Topic in, multi-voice podcast out. All open weights.</div>
+      <div class="card-desc">A topic goes in, an outline + Host/Guest dialogue + multi-voice audio + show notes come out. Five-agent pipeline (research, content, fact-check, show notes, audio enhancement) runs locally on Mistral 7B via Ollama; Kokoro-82M renders speech in two voices on CPU. The live demo plays pre-generated episodes from one minute to fifteen, each produced end to end by the same pipeline. No API key in the request path.</div>
       <div class="tags">
         <span class="tag">CrewAI</span>
+        <span class="tag">Mistral</span>
         <span class="tag">Kokoro-82M</span>
-        <span class="tag">Gradio</span>
+        <span class="tag">Ollama</span>
         <span class="tag">Audio</span>
       </div>
       <div class="links">
-        <a class="demo" href="https://huggingface.co/spaces/windycityassassin/aipodcast-demo" target="_blank" rel="noopener">live demo (TTS) →</a>
+        <a class="demo" href="https://huggingface.co/spaces/windycityassassin/aipodcast-demo" target="_blank" rel="noopener">live demo →</a>
         <a href="https://github.com/windycityassassin/AIPodcast" target="_blank" rel="noopener">code →</a>
       </div>
     </div>
