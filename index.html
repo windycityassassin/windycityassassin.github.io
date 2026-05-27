@@ -475,6 +475,72 @@
       </div>
     </div>
 
+    <div class="card featured">
+      <div class="card-title">AIArtist</div>
+      <div class="card-tagline">Synthetic-artist release page. Two tracks, all software.</div>
+      <div class="card-desc">A fictional musician named v2/en_speaker_6 — after the Bark voice preset that produced the vocal. Discography, lyrics, liner notes, credits, gradient cover art, two real WAVs from the aisong engine. A product mockup answering one question: what does an end-to-end synthetic music release feel like when you build everything yourself, from the model down to the artwork?</div>
+      <div class="tags">
+        <span class="tag">HTML</span>
+        <span class="tag">CSS</span>
+        <span class="tag">aisong</span>
+        <span class="tag">MusicGen</span>
+        <span class="tag">Bark</span>
+      </div>
+      <div class="links">
+        <a class="demo" href="https://windycityassassin.github.io/AIArtist/" target="_blank" rel="noopener">live release page →</a>
+        <a href="https://github.com/windycityassassin/AIArtist" target="_blank" rel="noopener">code →</a>
+      </div>
+    </div>
+
+    <div class="card featured">
+      <div class="card-title">aisong</div>
+      <div class="card-tagline">Open-weights song generator. MusicGen beat, Bark vocal.</div>
+      <div class="card-desc">Text in, song out. MusicGen-small writes the instrumental, Bark / XTTS v2 carries the vocal. Two entry points: the Bark-only path runs anywhere, the MusicGen + XTTS path generates a beat then clones a vocal from a reference WAV. Built to test how far an end-to-end open-weights music pipeline can go on a single GPU.</div>
+      <div class="tags">
+        <span class="tag">PyTorch</span>
+        <span class="tag">MusicGen</span>
+        <span class="tag">XTTS v2</span>
+        <span class="tag">Bark</span>
+        <span class="tag">Audio</span>
+      </div>
+      <div class="links">
+        <a class="demo" href="https://windycityassassin.github.io/aisong/" target="_blank" rel="noopener">live demo (audio samples) →</a>
+        <a href="https://github.com/windycityassassin/aisong" target="_blank" rel="noopener">code →</a>
+      </div>
+    </div>
+
+    <div class="card featured">
+      <div class="card-title">faceless</div>
+      <div class="card-tagline">Faceless-YouTube assembly pipeline. Script in, MP4 out.</div>
+      <div class="card-desc">Takes a finance-education Markdown script (sections, timecodes) and produces a narrated MP4 with no human on camera. macOS say for TTS, ImageMagick for placeholder slides, ffmpeg for compose + concat. Existing 3-minute investment-basics video ships in the repo. Pipeline stops at file-on-disk — no YouTube upload, no script generation, by design.</div>
+      <div class="tags">
+        <span class="tag">Python</span>
+        <span class="tag">macOS say</span>
+        <span class="tag">ImageMagick</span>
+        <span class="tag">ffmpeg</span>
+      </div>
+      <div class="links">
+        <a class="demo" href="https://windycityassassin.github.io/faceless/" target="_blank" rel="noopener">live demo (embedded video) →</a>
+        <a href="https://github.com/windycityassassin/faceless" target="_blank" rel="noopener">code →</a>
+      </div>
+    </div>
+
+    <div class="card featured">
+      <div class="card-title">clashroyale</div>
+      <div class="card-tagline">Top-200 deck analytics over the Supercell API.</div>
+      <div class="card-desc">A small Flask app that aggregates deck composition and battle outcomes for the top 200 globally-ranked Clash Royale players via the official Supercell API. Two pages, no AI, no scraping — just a rate-limited (5 req/s) client, sequential per-player pulls, and aggregation. The live link is a UI-layout tour because the live API requires an IP-whitelisted backend.</div>
+      <div class="tags">
+        <span class="tag">Flask</span>
+        <span class="tag">Python</span>
+        <span class="tag">Jinja2</span>
+        <span class="tag">Supercell API</span>
+      </div>
+      <div class="links">
+        <a class="demo" href="https://windycityassassin.github.io/clashroyale/" target="_blank" rel="noopener">live demo (tour mode) →</a>
+        <a href="https://github.com/windycityassassin/clashroyale" target="_blank" rel="noopener">code →</a>
+      </div>
+    </div>
+
     <div class="card archived">
       <div class="card-title">LinkedInNewsBot</div>
       <div class="card-tagline">Tech news scraper with auto-poster. Not running.</div>
@@ -494,7 +560,7 @@
 </section>
 
 <footer>
-  <div>14 projects · 13 live demos · <a href="https://github.com/windycityassassin?tab=repositories" target="_blank" rel="noopener">all repositories →</a></div>
+  <div>18 projects · 17 live demos · <a href="https://github.com/windycityassassin?tab=repositories" target="_blank" rel="noopener">all repositories →</a></div>
   <div>Built static. Served by GitHub Pages.</div>
 </footer>
 
