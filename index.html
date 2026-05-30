@@ -258,6 +258,22 @@
   <div class="section-title">Projects</div>
   <div class="grid">
 
+    <div class="card">
+      <div class="card-title">radio-autotune</div>
+      <div class="card-tagline">Browser radio that auto-skips ads with a real-time speech/music classifier.</div>
+      <div class="card-desc">Streams ~40 curated music stations from radio-browser.info, taps the audio through Web Audio API, and runs a three-feature DSP classifier on the live signal every 100ms. LSTER (silence-pause ratio), ZCR std-dev (sibilant burstiness), and spectral-centroid std-dev (brightness variance), averaged over a 3-second window, weighted and thresholded at 0.55. When SPEECH holds for 5 seconds, AUTO-SKIP hops to the next station. ~85-90% accurate in practice. Zero dependencies, just Node 18+. Public live demo pending a Node host (server.js proxies streams for CORS).</div>
+      <div class="tags">
+        <span class="tag">Node</span>
+        <span class="tag">Web Audio API</span>
+        <span class="tag">DSP</span>
+        <span class="tag">Audio Classification</span>
+        <span class="tag">radio-browser.info</span>
+      </div>
+      <div class="links">
+        <a href="https://github.com/windycityassassin/radio-autotune" target="_blank" rel="noopener">code →</a>
+      </div>
+    </div>
+
     <div class="card featured">
       <div class="card-title">collegelinks</div>
       <div class="card-tagline">Interactive map of 1,186 colleges across India.</div>
@@ -560,7 +576,7 @@
 </section>
 
 <footer>
-  <div>17 projects · 16 live demos · <a href="https://github.com/windycityassassin?tab=repositories" target="_blank" rel="noopener">all repositories →</a></div>
+  <div>18 projects · 16 live demos · <a href="https://github.com/windycityassassin?tab=repositories" target="_blank" rel="noopener">all repositories →</a></div>
   <div>Built static. Served by GitHub Pages.</div>
 </footer>
 
